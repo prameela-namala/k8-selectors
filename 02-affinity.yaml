@@ -6,14 +6,13 @@ metadata:
 spec:
   affinity:
     nodeAffinity:
-      preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 1
-        preference:
-          matchExpressions:
-          - key: another-node-label-key
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: hardware
             operator: In
             values:
-            - another-node-label-value
+            - gpu
   containers:
   # docker run -d  --name nginx nginx
   - name: nginx
