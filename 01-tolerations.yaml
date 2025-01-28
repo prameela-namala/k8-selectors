@@ -10,8 +10,8 @@ spec:
     image: nginx  
   nodeSelector:
     hardware: gpu
-tolerations:
+  tolerations:
   - key: "hardware"
-  operator: "Equal"
-  value: "gpu"
-  effect: "NoSchedule"
+    operator: "Equal"
+    value: "gpu"
+    effect: "NoSchedule"
